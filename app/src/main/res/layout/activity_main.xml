@@ -25,7 +25,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Antwort vom Server"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPrim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextMatrikelnummer" />
@@ -36,22 +36,34 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:text="z.B. 01460393"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:text="01460393"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPrim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonPrim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="enterPrim"
         android:text="Primzahl ausgeben"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717" />
+
+    <Button
+        android:id="@+id/buttonTCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="enterTCP"
+        android:text="Verbinden"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPrim" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
