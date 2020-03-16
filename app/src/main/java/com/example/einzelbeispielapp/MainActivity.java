@@ -7,15 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +14,25 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextServer;
 
     public void enterPrim (View view){ //Lifecycle von Android - View
+        String stringMatrikelnummer = editTextMatrikelnummer.getText().toString();
+        String returnPrim = "";
 
+        for(int stringIndex = 0; stringIndex < stringMatrikelnummer.length(); stringIndex++) {
+            int oneNumberOfMatrikelnummer = Integer.parseInt(Character.toString(stringMatrikelnummer.charAt(stringIndex)));
+
+            if(oneNumberOfMatrikelnummer > 2) {
+                boolean isPrime = true;
+                for(int i=2;i<oneNumberOfMatrikelnummer;i++) {
+                    if(oneNumberOfMatrikelnummer%i==0) {
+                        isPrime = false;
+                    }
+                }
+                if(isPrime) {
+                    returnPrim += oneNumberOfMatrikelnummer + ",";
+                }
+            }
+        }
+        editTextServer.setText(returnPrim);
     }
 
     public void enterTCP (View view){
@@ -58,5 +67,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-
